@@ -59,7 +59,7 @@ with gr.Blocks() as demo:
                     label="Image", 
                     type="filepath"
                 )
-            with gr.Column():
+
                 with gr.Row():
                     rotate_pitch = gr.Slider(
                         label="Rotate Pitch", info='''Rotation pitch: Adjusts the up and down tilt of the face''', 
