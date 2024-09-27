@@ -59,6 +59,7 @@ with gr.Blocks() as demo:
                     label="Image", 
                     type="filepath"
                 )
+            with gr.Column():
                 with gr.Row():
                     rotate_pitch = gr.Slider(
                         label="Rotate Pitch", info='''Rotation pitch: Adjusts the up and down tilt of the face''', 
@@ -153,18 +154,18 @@ with gr.Blocks() as demo:
         outputs=outputs,
     )
 
-    rotate_pitch.release(fn=predict, inputs=inputs, outputs=outputs)
-    rotate_yaw.release(fn=predict, inputs=inputs, outputs=outputs)
-    rotate_roll.release(fn=predict, inputs=inputs, outputs=outputs)
-    blink.release(fn=predict, inputs=inputs, outputs=outputs)
-    eyebrow.release(fn=predict, inputs=inputs, outputs=outputs)
-    wink.release(fn=predict, inputs=inputs, outputs=outputs)
-    pupil_x.release(fn=predict, inputs=inputs, outputs=outputs)
-    pupil_y.release(fn=predict, inputs=inputs, outputs=outputs)
-    aaa.release(fn=predict, inputs=inputs, outputs=outputs)
-    eee.release(fn=predict, inputs=inputs, outputs=outputs)
-    woo.release(fn=predict, inputs=inputs, outputs=outputs)
-    smile.release(fn=predict, inputs=inputs, outputs=outputs)
+    rotate_pitch.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    rotate_yaw.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    rotate_roll.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    blink.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    eyebrow.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    wink.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    pupil_x.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    pupil_y.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    aaa.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    eee.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    woo.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
+    smile.release(fn=predict, inputs=inputs, outputs=outputs, show_progress="minimal")
 
 demo.launch(share=False, show_error=True)
 
