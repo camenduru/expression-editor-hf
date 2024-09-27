@@ -64,10 +64,14 @@ with gr.Blocks() as demo:
             with gr.Column():
                 image = gr.Image(
                     label="Image", 
-                    type="filepath"
+                    type="filepath",
+                    height=512
                 )
             with gr.Column():
-                result_image = gr.Image()
+                result_image = gr.Image(
+                    label="Output",
+                    height=512
+                )
 
         submit_btn = gr.Button("Submit")
 
