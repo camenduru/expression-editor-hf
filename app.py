@@ -127,7 +127,7 @@ with gr.Blocks() as demo:
                 minimum=-0.3, maximum=1.3
             )
         with gr.Accordion("More Settings", open=False):
-            with gr.column():
+            with gr.Column():
                 with gr.Row():
                     src_ratio = gr.Number(
                         label="Src Ratio", info='''Source ratio''', value=1
