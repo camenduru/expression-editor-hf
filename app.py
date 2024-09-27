@@ -104,8 +104,7 @@ def predict(request: gr.Request, *args, progress=gr.Progress(track_tqdm=True)):
     payload = {"input": {}}
     
     
-    parsed_url = urlparse(str(request.url))
-    base_url = parsed_url.scheme + "://" + parsed_url.netloc
+    base_url = "http://0.0.0.0:7860"
     for i, key in enumerate(names):
         value = args[i]
         if value and (os.path.exists(str(value))):
