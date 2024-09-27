@@ -83,8 +83,9 @@ with gr.Blocks() as demo:
                         label="Eyebrow", info='''Eyebrow: Adjusts the height and shape of the eyebrows''', value=0,
                         minimum=-10, maximum=15
                     )
-                    wink = gr.Number(
-                        label="Wink", info='''Wink: Controls the degree of one eye closing''', value=0
+                    wink = gr.Slider(
+                        label="Wink", info='''Wink: Controls the degree of one eye closing''', value=0,
+                        minimum=0, maximum=25
                     )
                 with gr.Row():
                     pupil_x = gr.Slider(
@@ -133,6 +134,15 @@ with gr.Blocks() as demo:
                 submit_btn = gr.Button("Submit")
             with gr.Column():
                 result_image = gr.Image()
+                gr.HTML("""
+                <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                    <p style="display: flex;gap: 6px;">
+                         <a href="https://huggingface.co/spaces/fffiloni/expression-editor?duplicate=true">
+                            <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/duplicate-this-space-md.svg" alt="Duplicate this Space">
+                        </a> to skip the queue and enjoy faster inference on the GPU of your choice 
+                    </p>
+                </div>
+                """)
 
     inputs = [image, rotate_pitch, rotate_yaw, rotate_roll, blink, eyebrow, wink, pupil_x, pupil_y, aaa, eee, woo, smile, src_ratio, sample_ratio, crop_factor, output_format, output_quality]
     outputs = [result_image]
