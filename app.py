@@ -157,5 +157,5 @@ app = gr.Interface(
     description=model_description,
     allow_flagging="never",
 )
-app.launch(share=True)
+app.launch(share=False, show_error=True)
 
